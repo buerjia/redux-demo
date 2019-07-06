@@ -7,13 +7,13 @@
   并在其内创建index.js   reducer.js
 ```
 ```js
-  index.js:
+  /** index.js: */
   import {createStore} from 'redux;
   import reducer from './reducer'
   const store = createStore(reducer)
   export default store
 
-  reducer.js:
+  /** reducer.js: */
   const defaultState = {
     a:'',b:''
   }
@@ -26,7 +26,7 @@
     return state
   }
 
-  componentXXX:
+  /**c omponentXXX: */
   import store from './store'
   /* 获取store里的数据 */
   store.getState();
