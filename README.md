@@ -1,7 +1,8 @@
 ## redux 学习
 ###1.redux图解
   ![Demo](https://jspang.com/images/redux_flow.png)
-  [完成图片地址](https://jspang.com/images/redux_flow.png)
+  [redux图解完成图片地址](https://jspang.com/images/redux_flow.png)
+
 ###2.安装redux并创建文件夹
 
 ```diff
