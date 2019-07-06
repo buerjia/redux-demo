@@ -6,9 +6,9 @@
 ### 2.安装redux并创建文件夹
 
 ```diff
-  + cnpm i redux -S  // 安装redux
-  + 创建store文件夹
-  + 并在其内创建index.js   reducer.js
+  +  cnpm i redux -S  // 安装redux
+  +  创建store文件夹
+  +  并在其内创建index.js   reducer.js
 ```
 ### 3.code
 ```js
