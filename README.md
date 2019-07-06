@@ -1,16 +1,16 @@
 ## redux 学习
-###1.redux图解
+### 1.redux图解
   ![Demo](https://jspang.com/images/redux_flow.png)
   [redux图解完成图片地址](https://jspang.com/images/redux_flow.png)
 
-###2.安装redux并创建文件夹
+### 2.安装redux并创建文件夹
 
 ```diff
   + cnpm i redux -S  // 安装redux
   + 创建store文件夹
   + 并在其内创建index.js   reducer.js
 ```
-###3.code
+### 3.code
 ```js
   /** index.js: */
   import {createStore} from 'redux'
