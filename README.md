@@ -50,13 +50,15 @@
 
     工作中如果组件中的action.type单词拼写错误之后，与reducer.js中的判断不一致时，是不会报错的，导致问题不容易解决；
     我们会将所有的action.type抽离出来，放到store/actionTypes.js中，定义action.type的名称为常量，例：
+
 ```
     export const CHANGE_VAL = 'changeVal';
     // 在组件中导入，reducer中导入，直接使用常量就可以，如果常量拼写错误，直接会报错，容易定位问题
 ```
-### 4.工作中用技巧(二)
+### 5.工作中用技巧(二)
 
     组件中声明过多的action会显得冗余，所以我们会将action抽离出来，创建一个文件store/actionCreators.js
+
 ```js
     import { CHANGE_VAL, CHANGE_LIST, DEL_ITEM } from './actionTypes';
 
@@ -72,7 +74,6 @@
       value
     })
 ```
-
     在组件中引入并替换：
 ```js
     import { changeValAction } from './store/actionCreators';
