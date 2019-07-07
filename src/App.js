@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import store from './store'
 import 'antd/dist/antd.css'
 import { Input, Button, List, Alert } from 'antd'
-import { CHANGE_VAL, CHANGE_LIST, DEL_ITEM } from './actionTypes';
+import { changeValAction, changeListAction, delItemAction } from './store/actionCreators';
 
 class App extends Component {
   constructor() {
@@ -40,11 +40,7 @@ class App extends Component {
     );
   }
   valChange() {
-    const action = {
-      type: CHANGE_VAL,
-      value: this.ipt.input.value
-    }
-    store.dispatch(action)
+    store.dispatch(changeValAction(this.ipt.input.value))
   }
   storeChange() {
     this.setState(store.getState())
@@ -70,17 +66,11 @@ class App extends Component {
       })
       return
     };
-    const action = {
-      type: CHANGE_LIST,
-    }
-    store.dispatch(action)
+    console.log(changeListAction());
+    store.dispatch(changeListAction())
   }
   delItem(idx) {
-    const action = {
-      type: DEL_ITEM,
-      value: idx
-    }
-    store.dispatch(action)
+    store.dispatch(delItemAction(idx))
   }
 }
 
