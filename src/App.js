@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import store from './store'
 import 'antd/dist/antd.css'
 import { Input, Button, List, Alert } from 'antd'
-import { thisTypeAnnotation } from '@babel/types';
+import { CHANGE_VAL, CHANGE_LIST, DEL_ITEM } from './actionTypes';
 
 class App extends Component {
   constructor() {
@@ -27,7 +27,7 @@ class App extends Component {
         <List
           bordered
           dataSource={this.state.list}
-          renderItem={(item, idx) => <List.Item onClick={this.delItem.bind(this,idx)}>{item}</List.Item>}
+          renderItem={(item, idx) => <List.Item onClick={this.delItem.bind(this, idx)}>{item}</List.Item>}
         />
         {this.state.visible ? (
           <Alert
@@ -41,12 +41,12 @@ class App extends Component {
   }
   valChange() {
     const action = {
-      type:'changeVal',
-      value:this.ipt.input.value
+      type: CHANGE_VAL,
+      value: this.ipt.input.value
     }
     store.dispatch(action)
   }
-  storeChange(){
+  storeChange() {
     this.setState(store.getState())
   }
   handleClose() {
@@ -71,14 +71,14 @@ class App extends Component {
       return
     };
     const action = {
-      type:'changeList',
+      type: CHANGE_LIST,
     }
     store.dispatch(action)
   }
-  delItem(idx){
+  delItem(idx) {
     const action = {
-      type:'delItem',
-      value:idx
+      type: DEL_ITEM,
+      value: idx
     }
     store.dispatch(action)
   }

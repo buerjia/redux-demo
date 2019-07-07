@@ -46,3 +46,11 @@
     this.setState(store.getState())
   }
 ```
+### 4.工作中用技巧
+    我们会提取action.type为一个文件，因为如果组件中的action.type单词拼写错误之后，与reducer.js中的判断不一致时，是不会报错的，导致问题不容易解决；
+    将所有的action.type抽离出来，放到store/actionTypes.js中，定义action.type的名称为常量，例：
+```
+    export const CHANGE_VAL = 'changeVal';
+    // 在组件中导入，reducer中导入，直接使用常量就可以，如果常量拼写错误，直接会报错，容易定位问题
+```
+

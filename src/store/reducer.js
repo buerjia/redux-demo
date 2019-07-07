@@ -1,4 +1,4 @@
-
+import { CHANGE_VAL, CHANGE_LIST, DEL_ITEM } from './actionTypes';
 const defaultState = {
   val: 'write txt',
   list: [
@@ -8,20 +8,20 @@ const defaultState = {
 };
 export default (state = defaultState, action) => {
   let { type, value } = action;
-  if (type === 'changeVal') {
+  if (type === CHANGE_VAL) {
     let newState = JSON.parse(JSON.stringify(state));
     newState.val = value;
     return newState
   }
-  if (type === 'changeList') {
+  if (type === CHANGE_LIST) {
     let newState = JSON.parse(JSON.stringify(state));
     newState.list.push(newState.val);
     newState.val = ''
     return newState
   }
-  if (type === 'delItem') {
+  if (type === DEL_ITEM) {
     let newState = JSON.parse(JSON.stringify(state));
-    newState.list.splice(value,1);
+    newState.list.splice(value, 1);
     return newState
   }
   return state
